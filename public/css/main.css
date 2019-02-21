@@ -2301,6 +2301,7 @@ body.search-is-visible {
 
    .header__toggle-menu {
       top: -3px;
+      background-image: url(../images/icons/hamburger.jpg);
    }
 
    .header__search-trigger {
