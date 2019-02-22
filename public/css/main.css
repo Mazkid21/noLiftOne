@@ -1036,20 +1036,21 @@ span {
    border-radius: 3px;
    box-shadow: 0 0 5px 0 hsla(0, 0%, 30%, .3);
    font-size: 4em;
-   background-color: #fff
+   background-color: #fff;
+   display: none;
 }
 
 .elemnt {
    animation: xfade 30s 10s infinite;
-   background-image: url('/images/housing-final.jpg');
+   background-image: url('/images/Employees_zoe.png');
 }
 
-
+/*
 .elemnt1 {
    animation: xfade 30s 6s infinite;
    background-image: url('/images/cars.jpg');
 
-}
+} */
 
 /* .elemnt2 {
    animation: xfade 30s 2s infinite;
@@ -1077,7 +1078,7 @@ span {
    }
 }
 
-@keyframes xfade1 {
+/* @keyframes xfade1 {
    17% {
       opacity: 1;
    }
@@ -1089,7 +1090,7 @@ span {
    92% {
       opacity: 0;
    }
-}
+} */
 
 /* @keyframes xfade2 {
    17% {
@@ -2132,7 +2133,7 @@ span {
 
 .header__search-form input[type="search"] {
    background-color: transparent;
-   color: #000000;
+   color: white;
    height: auto;
    width: 100%;
    font-family: "metropolis-semibold", sans-serif;
