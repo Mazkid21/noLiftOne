@@ -29,7 +29,7 @@ router.post('/insert', (req, res, next) => {
             db.close();
         });
     });
-    res.redirect('/');
+    res.redirect('/supporters');
 
 
 });
