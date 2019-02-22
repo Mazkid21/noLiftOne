@@ -2256,8 +2256,9 @@ body.search-is-visible {
    }
 
    .header__logo img {
-      width: 225px;
-      height: 40px;
+      width: 10rem;
+      height: 10rem;
+
    }
 
    .header__social {
@@ -2267,11 +2268,13 @@ body.search-is-visible {
    .header__toggle-menu {
       top: 0;
       display: block;
+      background-image: url(../images/icons/hamburger.jpg);
    }
 
    .header__search-trigger {
       top: 9px;
       right: 28px;
+      background-image: url(../images/icons/support2.png);
    }
 
    .header__search-trigger::before {
@@ -2302,7 +2305,7 @@ body.search-is-visible {
 
    .header__toggle-menu {
       top: -3px;
-      background-image: url(../images/icons/hamburger.jpg);
+
    }
 
    .header__search-trigger {
@@ -2335,6 +2338,7 @@ body.search-is-visible {
 
    .header__toggle-menu {
       top: -7px;
+      background-image: url(../images/icons/hamburger.jpg);
    }
 
    .header__search-trigger {
