@@ -1,14 +1,19 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
+var userInfo = require('./userInfo');
 
 var User = mongoose.Schema({
   local: {
     email: String,
     password: String,
-  }
+  },
+  userInfo: [{
+    description: String,
+    other: String
+  }]
 });
 
-User.methods.encrypt = function (password) {
+User.methods.hash = function (password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
 };
 

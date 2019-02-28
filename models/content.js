@@ -1,10 +1,10 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema; 
+// var mongoose = require('mongoose');
+// var Schema = mongoose.Schema;
 
-var schema = new Schema({ 
- title: {type: String, required: true}, 
- description: {type: String, required: true}, 
- author: {type: String, required: true} 
-}); 
+// var schema = new Schema({
+//  title: {type: String, required: true},
+//  description: {type: String, required: true},
+//  author: {type: String, required: true}
+// });
 
-module.exports = mongoose.model('Content', schema);
+// module.exports = mongoose.model('Content', schema);

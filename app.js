@@ -14,6 +14,9 @@ var flash = require('connect-flash', 'req-flash');
 
 
 //Routes....dont forget to add to app.use() below
+var adminSignUpRoute = require('./routes/adminSignup');
+var adminLoginRoute = require('./routes/adminLogin');
+var admin = require('./routes/admin');
 var homeRoute = require('./routes/index');
 var voteRoute = require('./routes/vote');
 var supportersRoute = require('./routes/supporters');
@@ -21,10 +24,38 @@ var supportRoute = require('./routes/support');
 var pressRoute = require('./routes/press');
 var factsRoute = require('./routes/facts');
 var pressRoute = require('./routes/press');
+var logOutRoute = require('./routes/logout');
 var app = express();
 
 mongoose.connect('mongodb://localhost/noLiftOne', {
   useNewUrlParser: true
+});
+
+//passport
+
+var mongoose = require('mongoose');
+var passport = require('passport');
+var session = require('express-session');
+mongoose.connect('mongodb://localhost/bRockHillLive');
+app.use(session({
+  secret: "Rusty is the best and cutest dog in the world",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: false,
+    secret: "Rusty is the best and cutest dog in the world",
+    maxAge: 3600000 //1 hour
+  }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+require('./config/passportAdmin')(passport);
+
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
 });
 
 // view engine setup
@@ -70,6 +101,10 @@ app.use('/supporters', supportersRoute);
 app.use('/press', pressRoute);
 app.use('/facts', factsRoute);
 app.use('/support', supportRoute);
+app.use('/admin-signup', adminSignUpRoute);
+app.use('/admin-login', adminLoginRoute);
+app.use('/admin', admin);
+app.use('/logout', logOutRoute);
 
 
 // catch 404 and forward to error handler

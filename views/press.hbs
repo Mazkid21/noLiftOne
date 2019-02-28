@@ -139,7 +139,34 @@
 
                 <div class="grid-sizer"></div>
 
+                {{#each items}}
 
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="{{this.articleAdress}}" class="entry__thumb-link">
+                            <img src="{{this.thumbnailAdress}}" alt="">
+                        </a>
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+
+                            <div class="entry__date">
+                                <a href="single-standard.html">{{this.date}}</a>
+                            </div>
+                            <h1 class="entry__title"><a href="{{this.articleAdress}}">{{this.title}}</this></a></h1>
+
+                        </div>
+                        <div class="entry__excerpt">
+
+                        </div>
+
+                    </div>
+
+                </article> <!-- end article -->
+
+                {{/each}}
 
                 <article class="masonry__brick entry format-standard" data-aos="fade-up">
 
